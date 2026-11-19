@@ -1,7 +1,6 @@
 # Karte und Lauflänge: was „ARL = 370“ verschweigt – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-lauflaenge-karte-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-lauflaenge-karte-demo.streamlit.app/)**
 
 Erste Seite der Reihe **Änderungserkennung: wie schnell merkt man, dass sich etwas geändert hat?** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Konzepte-Reihe beginnt hier, es gibt keinen Vorgänger.
 Das Vehikel ist **ausgedacht**: unabhängige Normalwerte, Mittel und Streuung bekannt, ein Sprung des Mittelwerts an einer bekannten Stelle. Es gibt keine reale Datenquelle; in den gelesenen Quellen gab es keine Messung, ob eine solche Alarmregel in Logistik, Lager oder Fertigung bessere Entscheidungen liefert.
