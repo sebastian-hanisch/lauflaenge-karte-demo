@@ -121,6 +121,17 @@ with st.container(key="kopf"):
     st.title("📉 Karte und Lauflänge: was „ARL = 370“ verschweigt")
 st.markdown(T.INTRO)
 
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/lauflaenge-karte-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Eine Kontrollkarte prüft jede neue Messung und schlägt Alarm, wenn sie zu weit vom Sollwert abweicht. Nennt man für sie nur die mittlere Zahl der Messungen bis zum Fehlalarm, klingt das nach einem festen Takt. Die Demo zeigt, dass es keiner ist: Die Wartezeit bis zum Fehlalarm streut weit, der Alarm kommt oft viel früher und manchmal erst viel später als der Mittelwert. Die App rechnet diese Verteilung exakt aus und prüft sie gegen Zufallsreihen. Sie zeigt auch, wie lange die Karte nach einem echten Sprung braucht, wie viele Fehlalarme in einem Zeitfenster zu erwarten sind und was Zusatzregeln kosten. Alles gilt für ausgedachte, voneinander unabhängige Messwerte mit bekanntem Sollwert und bekannter Schwankung.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/lauflaenge-karte-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
+
 with st.expander("So funktioniert die Kontrollkarte", expanded=True):
     st.markdown(T.HOW_IT_WORKS)
 
@@ -377,6 +388,25 @@ st.markdown(T.ASSUMPTIONS_MARKDOWN)
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/lauflaenge-karte-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind unabhängige Beobachtungen $x_1, x_2, \dots$ in Einheiten der Streuung, ein Sprung des Mittelwerts um $\delta$ nach $\nu$ Beobachtungen und eine Alarmregel. Gesucht ist die Verteilung der Lauflänge $T$ bis zum Alarm, ihr Mittel, die Verzögerung nach dem Sprung und die Zahl der Alarme in einem Fenster.
+
+| Symbol | Bedeutung |
+|---|---|
+| $x_t$ | Beobachtung $t$ in Einheiten der Streuung |
+| $\delta$, $\nu$ | Sprung des Mittelwerts; Zahl der Beobachtungen vor der Änderung |
+| $c$, $p(\delta)$ | Schwelle der einfachen Karte; Alarmwahrscheinlichkeit je Beobachtung |
+| $T$, $D$ | Lauflänge bis einschließlich der alarmierenden Beobachtung; Verzögerung $D = T - \nu \ge 1$ |
+| $\text{ARL}_0$, $\text{ARL}_1$ | Mittel von $T$ ohne Änderung und nach einem Sprung |
+| $R_\delta$, $\mathbf{e}_0$ | Übergangsmatrix der Karte ohne Alarm; Start ohne Vorgeschichte |
+| $W$, $N_W$, $S_k$ | Fensterlänge; Zahl der Alarme im Fenster; Summe von $k$ Lauflängen |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/lauflaenge-karte-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(T.MATH_MARKDOWN)
 
 st.markdown("---")
